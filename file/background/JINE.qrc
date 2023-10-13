@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="背景">
+    <file>1.jpg</file>
+    <file>emoji_bgfull.png</file>
+  </qresource>
+  <qresource prefix="表情包">
+    <file>emoji/cry.png</file>
+    <file>emoji/die.png</file>
+    <file>emoji/idc.png</file>
+    <file>emoji/love.png</file>
+    <file>emoji/ok.png</file>
+    <file>emoji/omg.png</file>
+    <file>emoji/sorry.png</file>
+    <file>emoji/this.png</file>
+  </qresource>
+</RCC>
