@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
-from PyQt6.QtGui import QIcon
 from PySide6 import QtGui
+from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
+                            QSize, Qt, Signal)
+from PySide6.QtGui import (QFont, QPixmap)
+from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
+                               QPushButton, QScrollArea,
+                               QSizePolicy, QVBoxLayout, QWidget)
+
+from PlainTextEdit_Rewite import MyPlainTextEdit
+
+
 ################################################################################
 ## Form generated from reading UI file 'untitled3.ui'
 ##
@@ -8,15 +17,6 @@ from PySide6 import QtGui
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect,
-                            QSize, Qt, Signal)
-from PySide6.QtGui import (QFont, QPixmap)
-from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
-                               QPlainTextEdit, QPushButton, QScrollArea,
-                               QSizePolicy, QVBoxLayout, QWidget)
-
-from PlainTextEdit_Rewite import MyPlainTextEdit
 
 
 class ClickableLabel(QLabel):

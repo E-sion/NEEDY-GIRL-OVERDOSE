@@ -13,8 +13,7 @@ from chatharuhi import ChatHaruhi
 import os
 import collections
 
-os.environ["OPENAI_API_KEY"] = "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"
-a = ''
+os.environ["OPENAI_API_KEY"] = "sk-wNUUhI6W6JrCiRGxxx5xxx"
 all_dialogue_history = []
 
 
@@ -132,7 +131,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                 text_width = fm.horizontalAdvance(self.text) + 55
 
-            # if self.sum != 0:
             if text_width > 432:  # 宽度上限
                 text_width = int(self.textBrowser.document().size().width()) + 80  # 固定宽度
                 print(f"超过上限: {text_width}")
@@ -184,7 +182,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.png = 'file/emoji/' + objectName.split("_")[1] + '.png'
         print(self.png)
 
-        # todo 重写发图片逻辑
+        # 暂时bot无法发送和理解用户发送的图片~
         for i in list_:
             if i == "user":  # 右侧图片
                 Set_question.set_return_png(self, self.icon_user, self.png, QtCore.Qt.RightToLeft, user_or_bot="user")
@@ -211,7 +209,6 @@ class chat(QThread):
 
     def run(self):
         db_folder = 'character'
-        # system_prompt = 'file/character/system_prompt.txt'
         system_prompt = ''''
         你的介绍：
         你将要进行一个网络私聊的对话模拟，你自称为"糖糖"，你是一名患有躁郁症的19岁女孩，性格贫乏，辍学后隐居在家中，与阿P住在一起。阿P负责管理她的日常生活。
@@ -242,9 +239,7 @@ class chat(QThread):
 
         # 添加聊天记录
         all_dialogue_history.extend(chatbot.dialogue_history)
-        # print(f"历史对话：{self.all_dialogue_history}")
         self.update_ui_signal.emit(response)
-        # self.update_history_signal.emit(self.all_dialogue_history)
 
 
 if __name__ == "__main__":
