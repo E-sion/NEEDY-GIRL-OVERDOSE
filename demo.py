@@ -1,3 +1,4 @@
+import pickle
 import re
 import sys
 
@@ -12,14 +13,16 @@ from untitled3 import Ui_MainWindow
 from chatharuhi import ChatHaruhi
 import os
 import collections
+from task import Tack_Managet
 
 os.environ["OPENAI_API_KEY"] = "sk-wNUUhI6W6JrCiRGxxx5xxx"
-all_dialogue_history = []
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
+        self.form2 = Tack_Managet()  # 实例化子界面类
+        self.form2.show()  # 显示子界面
         self.history = []
         self.text_bot = '正在输入中…………'
         self.png = None
@@ -88,19 +91,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # self.widget.setContentsMargins(0, 0, 25, 0)
 
     def update_bot_text(self, strs):
-        # 定义正则表达式
-        regex = "「(.*?)」"
-        # 使用findall()函数返回所有匹配的结果
-        match = re.search(regex, strs)
-        # 使用group()函数获取捕获组的内容
-        result = match.group(1)
-        print(f"正则{result}")
-        self.text_bot = result
-        self.textBrowser.setText(self.text_bot)
-
-        QApplication.processEvents()  # 等待并处理主循环事件队列
-        self.set_widget(user_bot='bot')  # 修改气泡长宽
-        self.text_bot = '正在输入中…………'
+        try:
+            # 定义正则表达式
+            regex = "「(.*?)」"
+            # 使用findall()函数返回所有匹配的结果
+            match = re.search(regex, strs)
+            # 使用group()函数获取捕获组的内容
+            result = match.group(1)
+            print(f"正则{result}")
+            self.text_bot = result
+            self.textBrowser.setText(self.text_bot)
+            self.form2.start_worker_thread()  # 开始执行子界面的函数
+            QApplication.processEvents()  # 等待并处理主循环事件队列
+            self.set_widget(user_bot='bot')  # 修改气泡长宽
+            self.text_bot = '正在输入中…………'
+        except:
+            pass
 
     def history_(self, history):
         self.history = history
@@ -155,11 +161,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 text_width = 250  # 固定宽度
                 print(f"超过上限: {text_width}")
 
-
-
             # self.widget.setMinimumSize(text_width, int(self.textBrowser.document().size().height()) + 40)  # 规定气泡大小
-            self.widget.setMinimumSize(text_width,int(self.textBrowser.document().size().height()) + 80)  # 规定气泡大小
-            self.widget.setMaximumSize(text_width,int(self.textBrowser.document().size().height()) + 80)  # 规定气泡大小
+            self.widget.setMinimumSize(text_width, int(self.textBrowser.document().size().height()) + 80)  # 规定气泡大小
+            self.widget.setMaximumSize(text_width, int(self.textBrowser.document().size().height()) + 80)  # 规定气泡大小
             self.scrollArea.verticalScrollBar().setValue(10)
 
             # 气泡大小：
@@ -200,6 +204,7 @@ class chat(QThread):
     """
     update_ui_signal = Signal(str)
     update_history_signal = Signal(str)
+    value_signal = Signal(list)  # 主界面的信号用来绑定子界面类的函数方法
 
     def __init__(self, other, *args, **kwargs):
         super(chat, self).__init__()
@@ -208,6 +213,15 @@ class chat(QThread):
         self.all_dialogue_history: list = other.history
 
     def run(self):
+
+        # 读取本地历史对话（如果有）
+        if os.path.exists('file/chat_history/chat_history.pkl'):
+            with open('file/chat_history/chat_history.pkl', 'rb') as f:
+                all_dialogue_history = pickle.load(f)
+                # print(f' 本地聊天记忆库：{all_dialogue_history}\n')
+        else:
+            all_dialogue_history = []
+
         db_folder = 'character'
         system_prompt = ''''
         你的介绍：
@@ -233,12 +247,17 @@ class chat(QThread):
 
         # 在对话之前传入过往对话 并且去重
         chatbot.dialogue_history = list(collections.OrderedDict.fromkeys(all_dialogue_history))
-        print(f"传入的对话历史：{chatbot.dialogue_history}")
+        # print(f"传入的对话历史：{chatbot.dialogue_history}")
         response = chatbot.chat(role=self.role, text=self.prompt)
-        print(f'回复内容: {response}')
+        # print(f'回复内容: {response}')
 
         # 添加聊天记录
         all_dialogue_history.extend(chatbot.dialogue_history)
+
+        # 将all_dialogue_history里面的内容保存至本地，作为本地聊天数据库
+        with open('file/chat_history/chat_history.pkl', 'wb') as f:
+            pickle.dump(all_dialogue_history, f)
+
         self.update_ui_signal.emit(response)
 
 
@@ -247,4 +266,5 @@ if __name__ == "__main__":
     win = MainWindow()
     win.show()
     win.setStyleSheet("#MainWindow{border-image:url(windows.png)}")
+
     sys.exit(app.exec())
