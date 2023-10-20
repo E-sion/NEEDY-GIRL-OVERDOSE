@@ -15,7 +15,8 @@ import os
 import collections
 from task import Tack_Managet
 
-os.environ["OPENAI_API_KEY"] = "sk-wNUUhI6W6JrCiRGxxx5xxx"
+# os.environ["OPENAI_API_KEY"] = "sk-wNUUhI6W6JrCiRGxxx5xxx"
+os.environ["OPENAI_API_KEY"] = "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"
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
