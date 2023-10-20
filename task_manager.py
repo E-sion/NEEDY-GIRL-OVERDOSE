@@ -39,7 +39,7 @@ class Ui_Form(object):
         self.horizontalLayout.setContentsMargins(6, -1, -1, -1)
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
-        self.label.setPixmap(QPixmap(u"C:/Users/RE/Documents/Rainmeter/Skins/Needy Streamer Overload/@Resources/Images/Task Manager/icon_status_follower.png"))
+        self.label.setPixmap(QPixmap(u"file/background/icon_status_follower.png"))
 
         self.horizontalLayout.addWidget(self.label)
 
@@ -81,7 +81,7 @@ class Ui_Form(object):
         self.horizontalLayout_7.setContentsMargins(6, 6, 10, 8)
         self.label_4 = QLabel(self.widget)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setPixmap(QPixmap(u"C:/Users/RE/Documents/Rainmeter/Skins/Needy Streamer Overload/@Resources/Images/Task Manager/icon_status_stress.png"))
+        self.label_4.setPixmap(QPixmap(u"file/background/icon_status_stress.png"))
 
         self.horizontalLayout_7.addWidget(self.label_4)
 
@@ -142,7 +142,7 @@ class Ui_Form(object):
         self.horizontalLayout_6.setContentsMargins(6, 6, 10, 8)
         self.label_14 = QLabel(self.widget)
         self.label_14.setObjectName(u"label_14")
-        self.label_14.setPixmap(QPixmap(u"C:/Users/RE/Documents/Rainmeter/Skins/Needy Streamer Overload/@Resources/Images/Task Manager/icon_status_love.png"))
+        self.label_14.setPixmap(QPixmap(u"file/background/icon_status_love.png"))
 
         self.horizontalLayout_6.addWidget(self.label_14)
 
@@ -200,7 +200,7 @@ class Ui_Form(object):
         self.horizontalLayout_5.setContentsMargins(6, 6, 10, 8)
         self.label_7 = QLabel(self.widget)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setPixmap(QPixmap(u"C:/Users/RE/Documents/Rainmeter/Skins/Needy Streamer Overload/@Resources/Images/Task Manager/icon_status_yami.png"))
+        self.label_7.setPixmap(QPixmap(u"file/background/icon_status_yami.png"))
 
         self.horizontalLayout_5.addWidget(self.label_7)
 
