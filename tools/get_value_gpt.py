@@ -1,3 +1,4 @@
+import openai
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import (
     AIMessage,
@@ -6,13 +7,13 @@ from langchain.schema import (
 import os
 import re
 
-def get_vale(history: list):
-    os.environ["OPENAI_API_KEY"] = "sk-JNcG8JdbIn1AT9AZh5Xdcn11vbXxLGdVLCqjYNC7HrDlgFAc"
-    os.environ["OPENAI_API_BASE"] = 'https://openkey.cloud/v1'
 
-    """
-    这个数值可以读取一个列表里面的最后三个数值，并且将这三这个数值传给gpt，让获取到chatgpt的输出，然后返回输出。
-    """
+def get_vale(history: list):
+    # os.environ["OPENAI_API_KEY"] = "sk-I45aQDJpxEeUL52ZpVvVfCxxxxxx"
+    # os.environ["OPENAI_API_BASE"] = 'https://openkey.cloud/v1'
+
+    openai.api_key = os.environ.get('OPENAI_API_KEY')
+
     chat = ChatOpenAI(temperature=0)
 
     prompt = """
@@ -41,7 +42,6 @@ def get_vale(history: list):
     result = chat(messages)
 
     return result
-
 
 
 def re_(strs):
