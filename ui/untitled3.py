@@ -7,7 +7,7 @@ from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
                                QPushButton, QScrollArea,
                                QSizePolicy, QVBoxLayout, QWidget)
 
-from PlainTextEdit_Rewite import MyPlainTextEdit
+from tools.PlainTextEdit_Rewite import MyPlainTextEdit
 
 
 ################################################################################
@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(390, 662)
         MainWindow.setStyleSheet(u"")
         MainWindow.setWindowTitle("Jine")
-        MainWindow.setWindowIcon(QtGui.QIcon('./file/background/1.ico'))
+        MainWindow.setWindowIcon(QtGui.QIcon('file/background/1.ico'))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"")

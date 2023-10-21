@@ -15,25 +15,30 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QProgressBar,
-    QSizePolicy, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QGroupBox, QHBoxLayout, QLabel,
+    QProgressBar, QSizePolicy, QVBoxLayout, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(394, 369)
+        Form.resize(412, 335)
+        Form.setMinimumSize(QSize(412, 335))
+        Form.setMaximumSize(QSize(412, 335))
         font = QFont()
         font.setFamilies([u"Zpix"])
         Form.setFont(font)
         Form.setContextMenuPolicy(Qt.NoContextMenu)
-        Form.setStyleSheet(u"background-color: rgb(255, 248, 255);")
+        Form.setStyleSheet(u"")
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(1, 1, 391, 364))
+        self.widget.setGeometry(QRect(0, 0, 411, 331))
+        self.widget.setStyleSheet(u".QWidget{\n"
+"background-color: rgb(255, 248, 255);\n"
+"}")
         self.verticalLayout_6 = QVBoxLayout(self.widget)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(6, 0, 0, 0)
+        self.verticalLayout_6.setContentsMargins(6, -1, -1, -1)
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(6, -1, -1, -1)
@@ -60,14 +65,13 @@ class Ui_Form(object):
         self.change_fans.setObjectName(u"change_fans")
         font2 = QFont()
         font2.setFamilies([u"Zpix"])
-        font2.setPointSize(36)
+        font2.setPointSize(51)
         font2.setBold(True)
         self.change_fans.setFont(font2)
 
         self.verticalLayout.addWidget(self.change_fans)
 
         self.verticalLayout.setStretch(0, 1)
-        self.verticalLayout.setStretch(1, 9)
 
         self.horizontalLayout.addLayout(self.verticalLayout)
 
@@ -126,7 +130,7 @@ class Ui_Form(object):
         self.pressure_progressBar = QProgressBar(self.widget)
         self.pressure_progressBar.setObjectName(u"pressure_progressBar")
         self.pressure_progressBar.setMinimumSize(QSize(130, 60))
-        self.pressure_progressBar.setValue(24)
+        self.pressure_progressBar.setValue(0)
         self.pressure_progressBar.setOrientation(Qt.Vertical)
 
         self.horizontalLayout_7.addWidget(self.pressure_progressBar)
@@ -184,7 +188,7 @@ class Ui_Form(object):
         self.fav_progressBar = QProgressBar(self.widget)
         self.fav_progressBar.setObjectName(u"fav_progressBar")
         self.fav_progressBar.setMinimumSize(QSize(130, 60))
-        self.fav_progressBar.setValue(24)
+        self.fav_progressBar.setValue(0)
         self.fav_progressBar.setOrientation(Qt.Vertical)
 
         self.horizontalLayout_6.addWidget(self.fav_progressBar)
@@ -241,7 +245,7 @@ class Ui_Form(object):
         self.darkness_progressBar = QProgressBar(self.widget)
         self.darkness_progressBar.setObjectName(u"darkness_progressBar")
         self.darkness_progressBar.setMinimumSize(QSize(130, 60))
-        self.darkness_progressBar.setValue(24)
+        self.darkness_progressBar.setValue(0)
         self.darkness_progressBar.setOrientation(Qt.Vertical)
 
         self.horizontalLayout_5.addWidget(self.darkness_progressBar)
@@ -252,6 +256,48 @@ class Ui_Form(object):
 
         self.verticalLayout_6.addLayout(self.horizontalLayout_5)
 
+        self.groupBox = QGroupBox(Form)
+        self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setGeometry(QRect(460, 120, 151, 41))
+        self.groupBox.setMinimumSize(QSize(151, 41))
+        self.groupBox.setMaximumSize(QSize(151, 41))
+        self.groupBox.setFont(font)
+        self.groupBox.setStyleSheet(u"QGroupBox{\n"
+"border-image:url(file/background/hitokoto.png);}")
+        self.label_16 = QLabel(self.groupBox)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setGeometry(QRect(50, 0, 51, 31))
+        font4 = QFont()
+        font4.setFamilies([u"Zpix"])
+        font4.setPointSize(20)
+        self.label_16.setFont(font4)
+        self.label_16.setAlignment(Qt.AlignCenter)
+        self.groupBox_2 = QGroupBox(Form)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.groupBox_2.setGeometry(QRect(460, 170, 151, 41))
+        self.groupBox_2.setMinimumSize(QSize(151, 41))
+        self.groupBox_2.setMaximumSize(QSize(151, 41))
+        self.groupBox_2.setFont(font)
+        self.groupBox_2.setStyleSheet(u"QGroupBox{\n"
+"border-image:url(file/background/hitokoto.png);}")
+        self.label_17 = QLabel(self.groupBox_2)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setGeometry(QRect(50, 0, 51, 31))
+        self.label_17.setFont(font4)
+        self.label_17.setAlignment(Qt.AlignCenter)
+        self.groupBox_3 = QGroupBox(Form)
+        self.groupBox_3.setObjectName(u"groupBox_3")
+        self.groupBox_3.setGeometry(QRect(460, 220, 151, 41))
+        self.groupBox_3.setMinimumSize(QSize(151, 41))
+        self.groupBox_3.setMaximumSize(QSize(151, 41))
+        self.groupBox_3.setFont(font)
+        self.groupBox_3.setStyleSheet(u"QGroupBox{\n"
+"border-image:url(file/background/hitokoto.png);}")
+        self.label_18 = QLabel(self.groupBox_3)
+        self.label_18.setObjectName(u"label_18")
+        self.label_18.setGeometry(QRect(50, 0, 51, 31))
+        self.label_18.setFont(font4)
+        self.label_18.setAlignment(Qt.AlignCenter)
 
         self.retranslateUi(Form)
 
@@ -262,18 +308,24 @@ class Ui_Form(object):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"\u4efb\u52a1\u7ba1\u7406\u5668", None))
         self.label.setText("")
         self.label_2.setText(QCoreApplication.translate("Form", u"\u7c89\u4e1d", None))
-        self.change_fans.setText(QCoreApplication.translate("Form", u"1000", None))
+        self.change_fans.setText(QCoreApplication.translate("Form", u"0", None))
         self.label_4.setText("")
         self.label_10.setText(QCoreApplication.translate("Form", u"\u538b\u529b", None))
-        self.change_pressure.setText(QCoreApplication.translate("Form", u"10", None))
+        self.change_pressure.setText(QCoreApplication.translate("Form", u"0", None))
         self.label_11.setText(QCoreApplication.translate("Form", u"/100", None))
         self.label_14.setText("")
         self.label_12.setText(QCoreApplication.translate("Form", u"\u597d\u611f\u5ea6", None))
-        self.change_fav.setText(QCoreApplication.translate("Form", u"10", None))
+        self.change_fav.setText(QCoreApplication.translate("Form", u"0", None))
         self.label_13.setText(QCoreApplication.translate("Form", u"/100", None))
         self.label_7.setText("")
         self.label_24.setText(QCoreApplication.translate("Form", u"\u9634\u6697\u5ea6", None))
-        self.change_darkness.setText(QCoreApplication.translate("Form", u"10", None))
+        self.change_darkness.setText(QCoreApplication.translate("Form", u"0", None))
         self.label_26.setText(QCoreApplication.translate("Form", u"/100", None))
+        self.groupBox.setTitle("")
+        self.label_16.setText(QCoreApplication.translate("Form", u"+1", None))
+        self.groupBox_2.setTitle("")
+        self.label_17.setText(QCoreApplication.translate("Form", u"+1", None))
+        self.groupBox_3.setTitle("")
+        self.label_18.setText(QCoreApplication.translate("Form", u"+1", None))
     # retranslateUi
 

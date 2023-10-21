@@ -1,14 +1,11 @@
-import random
-import time
-
 from PySide6 import QtCore, QtWidgets
-from PySide6.QtCore import QUrl, QSize
-from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QLabel, QTextBrowser
+from PySide6.QtCore import QRect
+from PySide6.QtGui import QPixmap, QFont
+from PySide6.QtWidgets import QLabel, QGroupBox
 
 
 class Set_question:
-    def set_return(self, ico, text, dir,bot:bool):  # 头像，文本，方向0
+    def set_return(self, ico, text, dir):  # 头像，文本，方向0
         self.widget = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.widget.setLayoutDirection(dir)
         self.widget.setObjectName("widget")
@@ -35,7 +32,7 @@ class Set_question:
         self.horizontalLayout.addWidget(self.textBrowser)
         self.verticalLayout.addWidget(self.widget)
 
-    def set_return_png(self, ico, png, dir,user_or_bot):  # 头像，图片，方向
+    def set_return_png(self, ico, png, dir, user_or_bot):  # 头像，图片，方向
         self.widget = QtWidgets.QWidget(self.scrollAreaWidgetContents)
         self.widget.setLayoutDirection(dir)
         self.widget.setObjectName("widget")
