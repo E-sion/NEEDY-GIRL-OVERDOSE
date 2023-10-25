@@ -9,8 +9,6 @@ import re
 
 
 def get_vale(history: list):
-    # os.environ["OPENAI_API_KEY"] = "sk-I45aQDJpxEeUL52ZpVvVfCxxxxxx"
-    # os.environ["OPENAI_API_BASE"] = 'https://openkey.cloud/v1'
 
     openai.api_key = os.environ.get('OPENAI_API_KEY')
 
@@ -36,7 +34,7 @@ def get_vale(history: list):
         SystemMessage(content=prompt),
         AIMessage(content="好的，请为我提供对话聊天内容，我会总结里面糖糖的角色感情变化，并且输出指定格式的内容给您"),
         SystemMessage(content=str(test)),
-        AIMessage(content='[好感度]:(+4) [压力]:(0) [阴暗度]:(0)'),
+        AIMessage(content='[压力]:(0) [好感度]:(+4)  [阴暗度]:(0)'),
         SystemMessage(content=str(strs)),
     ]
     result = chat(messages)
@@ -46,7 +44,7 @@ def get_vale(history: list):
 
 def re_(strs):
     # 处理字符串，并且返回指定的值
-    # 例如，传入的str为content='[好感度]:(-2) [压力]:(+2) [阴暗度]:(+1)' 则返回列表：[-2,+2,+1]
+    # 例如，传入的str为content='[压力]:(+2) [好感度]:(-2)  [阴暗度]:(+1)' 则返回列表：[-2,+2,+1]
     result = []  # 创建一个空列表，用于存放结果
     pattern = r'\(([-+]?\d+)\)'  # 创建一个正则表达式模式，用于匹配括号内的数值
     re_str = str(strs)

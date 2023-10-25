@@ -9,15 +9,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>390</width>
-    <height>662</height>
+    <width>326</width>
+    <height>571</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Jine</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="file/background/JINE.qrc">
+   <iconset>
     <normaloff>:/背景/1.jpg</normaloff>:/背景/1.jpg</iconset>
   </property>
   <property name="windowOpacity">
@@ -98,8 +98,8 @@ background-color: rgb(238, 152, 238);
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>386</width>
-            <height>483</height>
+            <width>322</width>
+            <height>392</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -154,7 +154,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/love.png</pixmap>
+            <pixmap>../file/emoji/love.png</pixmap>
            </property>
           </widget>
          </item>
@@ -164,7 +164,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/idc.png</pixmap>
+            <pixmap resource="../file/images.qrc">:/files/emoji/idc.png</pixmap>
            </property>
           </widget>
          </item>
@@ -174,7 +174,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/ok.png</pixmap>
+            <pixmap resource="../file/images.qrc">:/files/emoji/ok.png</pixmap>
            </property>
           </widget>
          </item>
@@ -187,7 +187,7 @@ background-color: rgb(238, 152, 238);
             <enum>Qt::AutoText</enum>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/die.png</pixmap>
+            <pixmap resource="../file/images.qrc">:/files/emoji/die.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>false</bool>
@@ -204,7 +204,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/omg.png</pixmap>
+            <pixmap>../file/emoji/omg.png</pixmap>
            </property>
           </widget>
          </item>
@@ -214,7 +214,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/sorry.png</pixmap>
+            <pixmap resource="../file/images.qrc">:/files/emoji/sorry.png</pixmap>
            </property>
           </widget>
          </item>
@@ -224,7 +224,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/cry.png</pixmap>
+            <pixmap resource="../file/images.qrc">:/files/emoji/cry.png</pixmap>
            </property>
           </widget>
          </item>
@@ -234,7 +234,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>file/emoji/this.png</pixmap>
+            <pixmap resource="../file/images.qrc">:/files/emoji/this.png</pixmap>
            </property>
           </widget>
          </item>
@@ -332,7 +332,7 @@ background-color: rgb(238, 152, 238);
   </widget>
  </widget>
  <resources>
-  <include location="file/background/JINE.qrc"/>
+  <include location="../file/images.qrc"/>
  </resources>
  <connections/>
 </ui>

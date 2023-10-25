@@ -5,7 +5,6 @@ from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 from tools.QThreads import WorkerThread
-from tools.get_value_gpt import get_vale, re_
 from ui.task_manager import Ui_Form
 
 
@@ -22,6 +21,9 @@ class Tack_Managet(QMainWindow, Ui_Form):
         self.groupBox_2.setVisible(False)
         self.groupBox_3.setVisible(False)
 
+        # 修改默认的数值
+        self.update_value()
+
     # 处理窗口显示数值，进度条，弹出tip的内容
     def set_progressbar(self, progress_values: list):
         """
@@ -33,8 +35,7 @@ class Tack_Managet(QMainWindow, Ui_Form):
             print(f'传递内容：{progress_values}')
             # 尝试获取当前的总数值 all_progress_values 。如果没有则在本地创建一个文件用来储存总数值，并且重置总数值的值都为0，0，0。
             # 如果有本地总数值文件，则读取将总数值的值进行更新处理。
-
-            # 本地建立
+            # 压力 / 好感度 / 阴暗度
 
             if os.path.exists('file/all_progress_values.pkl'):
                 # 读取本地总数值文件
@@ -44,43 +45,72 @@ class Tack_Managet(QMainWindow, Ui_Form):
                     all_progress_values = [x + y for x, y in zip(i, progress_values)]
                     print(f'更新后内容：{all_progress_values}')
             else:
-                # 创建本地总数值文件，并初始化为当前数值
-                all_progress_values = progress_values
+                # 创建本地总数值文件，并初始化为当前数值，默认好感度为20
+                all_progress_values = [0, 20, 0]
 
             with open('file/all_progress_values.pkl', 'wb') as f:
                 pickle.dump(all_progress_values, f)
 
             # 将所有变化值转换为str类型
-            str_p_values = str(progress_values[1])
-            str_f_values = str(progress_values[0])
-            str_d_values = str(progress_values[2])
+            if progress_values[0] > 0:
+                str_p_values = ("+" + str(progress_values[0]))
+            else:
+                str_p_values = str(progress_values[0])
+
+            if progress_values[1] > 0:
+                str_f_values = ("+" + str(progress_values[1]))
+            else:
+                str_f_values = str(progress_values[1])
+
+            if progress_values[2] > 0:
+                str_d_values = ("+" + str(progress_values[2]))
+            else:
+                str_d_values = str(progress_values[2])
 
             # 设置进度条的值为总数值，并且处理负数情况
-            # 好感度
-            self.change_fav.setText(str(all_progress_values[0]))
-            if progress_values[0] <= 0:
-                self.fav_progressBar.setValue(0)
-            else:
-                self.fav_progressBar.setValue(all_progress_values[0])
-            # 弹出窗口
-            self.tips('fav', str_f_values)
 
             # 压力
-            self.change_pressure.setText(str(all_progress_values[1]))
-            if progress_values[1] < 0:
-                self.pressure_progressBar.setValue(1)
-            else:
-                self.pressure_progressBar.setValue(all_progress_values[1])
+            self.change_pressure.setText(str(all_progress_values[0]))
+            self.pressure_progressBar.setValue(all_progress_values[0])
+
             # 弹出窗口
             self.tips('pressure', str_p_values)
 
+            # 好感度
+            self.change_fav.setText(str(all_progress_values[1]))
+            self.fav_progressBar.setValue(all_progress_values[1])
+
+            # 弹出窗口
+            self.tips('fav', str_f_values)
+
             # 阴暗度
             self.change_darkness.setText(str(all_progress_values[2]))
-            if progress_values[2] <= 0:
-                self.darkness_progressBar.setValue(0)
-            else:
-                self.darkness_progressBar.setValue(all_progress_values[2])
+            self.darkness_progressBar.setValue(all_progress_values[2])
+
             self.tips('darkness', str_d_values)
+
+    # 处理默认开始时候的数值
+    def update_value(self):
+        # 读取本地的数值
+        try:
+            # 读取本地总数值文件，设置数值，以及进度条的初始值
+            with open('file/all_progress_values.pkl', 'rb') as f:
+                i = pickle.load(f)
+                # 压力
+                self.change_pressure.setText(str(i[0]))
+                self.pressure_progressBar.setValue(i[0])
+
+                # 好感度
+                self.change_fav.setText(str(i[1]))
+                self.fav_progressBar.setValue(i[1])
+
+                # 阴暗度
+                self.change_darkness.setText(str(i[2]))
+                self.darkness_progressBar.setValue(i[2])
+
+
+        except:
+            pass
 
     # 使用线程更新数值
     def start_worker_thread(self):

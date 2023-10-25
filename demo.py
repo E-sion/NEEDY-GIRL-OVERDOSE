@@ -1,10 +1,12 @@
 import re
 import sys
 
+import openai
 from PySide6 import QtGui, QtCore
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QFont, QFontMetrics
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from dotenv import load_dotenv
 
 from tools.QThreads import chat
 from tools.new_widget import Set_question
@@ -13,20 +15,23 @@ import os
 
 from tools.task import Tack_Managet
 
-# os.environ["OPENAI_API_KEY"] = "sk-wNUUhI6W6JrCiRGxxx5xxx"
+# .env 文件 ~
+load_dotenv()
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     # 初始化
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
+        self.setupUi(self)
         self.form2 = Tack_Managet()  # 实例化子界面类
         self.form2.show()  # 显示子界面
         self.history = []
         self.text_bot = '正在输入中…………'
         self.png = None
 
-        self.setupUi(self)
+        self.form2.move(250, 150)
 
         self.text = ""  # 存储信息
         self.icon_user = QtGui.QPixmap("")  # 用户头像
@@ -145,7 +150,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.widget.setMaximumSize(text_width, int(self.textBrowser.document().size().height()) + 80)  # 规定气泡大小
             self.scrollArea.verticalScrollBar().setValue(10)
 
-
     # 窗口滚动到最底部
     def adjustScrollToMaxValue(self):
         scrollbar = self.scrollArea.verticalScrollBar()
@@ -166,11 +170,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             elif i == 'bot':  # 左侧
                 pass
 
+    # 关闭程序
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, '晚安',
+                                     "晚安",
+                                     QMessageBox.Yes | QMessageBox.No,
+                                     QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            event.accept()
+            sys.exit(0)  # 退出程序
+        else:
+            event.ignore()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     win = MainWindow()
     win.show()
     win.setStyleSheet("#MainWindow{border-image:url(windows.png)}")
-
     sys.exit(app.exec())
