@@ -19,7 +19,10 @@
 聊天窗口示例：
 
 
-![屏幕截图 2023-10-19 161809.png](https://s2.loli.net/2023/10/19/6waFsUfTxW5VDBr.png)
+
+
+![图片1.png](https://s2.loli.net/2023/10/22/RIVBOwqv7EAFdz1.png)
+
 
 
 
