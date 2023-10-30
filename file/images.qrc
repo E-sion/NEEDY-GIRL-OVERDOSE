@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="files">
+    <file>emoji/cry.png</file>
+    <file>emoji/die.png</file>
+    <file>emoji/idc.png</file>
+    <file>emoji/love.png</file>
+    <file>emoji/ok.png</file>
+    <file>emoji/omg.png</file>
+    <file>emoji/sorry.png</file>
+    <file>emoji/this.png</file>
+    <file>background/1.ico</file>
+    <file>background/1.jpg</file>
+    <file>background/emoji_bg.png</file>
+    <file>background/emoji_bgfull.png</file>
+    <file>background/hitokoto.png</file>
+    <file>background/icon_status_follower.png</file>
+    <file>background/icon_status_love.png</file>
+    <file>background/icon_status_stress.png</file>
+    <file>background/icon_status_yami.png</file>
+    <file>background/JINEBG.png</file>
+    <file>background/window.png</file>
+  </qresource>
+</RCC>

@@ -7,9 +7,10 @@ from peft import PeftModel
 tokenizer_BaiChuan = None
 model_BaiChuan = None
 
+
 def initialize_BaiChuan2LORA():
     global model_BaiChuan, tokenizer_BaiChuan
-    
+
     if model_BaiChuan is None:
         model_BaiChuan = AutoModelForCausalLM.from_pretrained(
             "baichuan-inc/Baichuan2-13B-Chat",
@@ -24,26 +25,28 @@ def initialize_BaiChuan2LORA():
         model_BaiChuan.generation_config = GenerationConfig.from_pretrained(
             "baichuan-inc/Baichuan2-13B-Chat"
         )
-    
+
     if tokenizer_BaiChuan is None:
-        tokenizer_BaiChuan =  AutoTokenizer.from_pretrained(
-            "baichuan-inc/Baichuan2-13B-Chat", 
-            use_fast=True, 
+        tokenizer_BaiChuan = AutoTokenizer.from_pretrained(
+            "baichuan-inc/Baichuan2-13B-Chat",
+            use_fast=True,
             trust_remote_code=True
         )
-    
+
     return model_BaiChuan, tokenizer_BaiChuan
+
 
 def BaiChuan_tokenizer(text):
     return len(tokenizer_BaiChuan.encode(text))
 
+
 class BaiChuan2GPT(BaseLLM):
-    def __init__(self, model = "haruhi-fusion-baichuan"):
+    def __init__(self, model="haruhi-fusion-baichuan"):
         super(BaiChuan2GPT, self).__init__()
         if model == "baichuan2-13b":
             self.tokenizer = AutoTokenizer.from_pretrained(
-                "baichuan-inc/Baichuan2-13B-Chat", 
-                use_fast=True, 
+                "baichuan-inc/Baichuan2-13B-Chat",
+                use_fast=True,
                 trust_remote_code=True
             ),
             self.model = AutoModelForCausalLM.from_pretrained(
@@ -77,7 +80,7 @@ class BaiChuan2GPT(BaseLLM):
         with torch.no_grad():
             response = self.model.chat(self.tokenizer, self.messages)
         return response
-        
+
     def print_prompt(self):
         print(type(self.messages))
         print(self.messages)

@@ -1,0 +1,217 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "E:/pythonProject/PyQt5-Chat-Demo-main(2)/demo.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": true
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "E:/pythonProject/PyQt5-Chat-Demo-main(2)/file/background/1.ico"
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "tqdm"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "regex"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "requests"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "packaging"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "filelock"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "tokenizers"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "importlib_metadata"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "numpy"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "huggingface-hub"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "safetensors"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "pyyaml"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "packaging"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "typing-extensions"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "charset-normalizer"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "idna"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "urllib3"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "certifi"
+  },
+  {
+   "optionDest": "copy_metadata",
+   "value": "chromadb"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.telemetry.posthog"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.api.segment"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.db.impl"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.db.impl.sqlite"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.migrations"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.migrations.embeddings_queue"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.manager"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.manager.local"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.metadata"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.metadata.sqlite"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.vector"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.vector.batch"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.vector.brute_force_index"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.vector.hnsw_params"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.vector.local_hnsw"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.segment.impl.vector.local_persistent_hnsw"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.migrations.sysdb"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "chromadb.migrations.metadb"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "tiktoken_ext"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "tiktoken_ext.openai_public"
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
