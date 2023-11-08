@@ -46,7 +46,7 @@ class Tack_Managet(QMainWindow, Ui_Form):
                     print(f'更新后内容：{all_progress_values}')
             else:
                 # 创建本地总数值文件，并初始化为当前数值，默认好感度为20
-                all_progress_values = [0, 20, 0]
+                all_progress_values = [70, 20, 25]
 
             with open('file/all_progress_values.pkl', 'wb') as f:
                 pickle.dump(all_progress_values, f)

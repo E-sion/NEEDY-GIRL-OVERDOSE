@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>326</width>
-    <height>571</height>
+    <width>364</width>
+    <height>678</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -98,8 +98,8 @@ background-color: rgb(238, 152, 238);
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>322</width>
-            <height>392</height>
+            <width>360</width>
+            <height>499</height>
            </rect>
           </property>
           <property name="styleSheet">

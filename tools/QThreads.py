@@ -71,7 +71,8 @@ class chat(QThread):
                 print(temp)
                 all_progress_values = f'[压力值]：{temp[1]} [好感度]：{temp[0]}  [阴暗度]：{temp[2]}'
         else:
-            temp = [0, 0, 0]
+            # 默认数值
+            temp = [20, 0, 0]
             all_progress_values = '[好感度]:(60) [压力]:(0) [阴暗度]:(0)'
 
         # todo 根据不同的数值状态传递给chatgpt不同的提示词
@@ -109,7 +110,6 @@ class chat(QThread):
 
         return system_prompt
 
-
 # 数值窗口刷新
 class WorkerThread(QThread):
     progress_updated = Signal(list)
@@ -133,7 +133,7 @@ class WorkerThread(QThread):
                 all_dialogue_history = pickle.load(f)
 
             # 添加限制
-            if len(all_dialogue_history) % 3 == 0:
+            if len(all_dialogue_history) % 2 == 0:
                 print(len(all_dialogue_history))
                 # 历史记录传递给chatgpt，获得格式化后的数值
                 re_temp = get_vale(all_dialogue_history)
@@ -145,3 +145,7 @@ class WorkerThread(QThread):
                 return
         else:
             return
+
+class Windows_chat_widet(QThread):
+    progress_updated = Signal(list)
+
