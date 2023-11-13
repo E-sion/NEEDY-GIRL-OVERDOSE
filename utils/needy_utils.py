@@ -1,6 +1,7 @@
 import logging
 import re
-
+import os
+import zipfile
 from PySide6.QtCore import QRect, Qt
 from PySide6.QtGui import QFontMetrics, QPixmap, QFont
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QTextBrowser, QApplication
@@ -137,3 +138,23 @@ def set_logger(self):
     self.logger.addHandler(ch)
 
 
+# 解压缩huggingface.zip
+def unzip_huggingface():
+    # 获取当前用户的主目录
+    home_dir = os.path.expanduser("~")
+    # 设置解压缩的目标目录
+    target_dir = os.path.join(home_dir, ".cache")
+
+    # 检查目标目录是否存在，如果不存在则创建
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir)
+
+    # 设置压缩文件的路径
+    zip_file = "huggingface.zip"
+
+    # 创建一个ZipFile对象
+    with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+        # 解压缩文件到目标目录
+        zip_ref.extractall(target_dir)
+
+    print(f"Successfully unzipped {zip_file} to {target_dir}")
