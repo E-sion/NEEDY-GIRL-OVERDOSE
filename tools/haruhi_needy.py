@@ -475,7 +475,7 @@ class GameMaster:
 
 # 文心一言
 os.environ["APIType"] = "aistudio"
-os.environ["ErnieAccess"] = "9c9af3eb850ae75e8b765d88eaf05b76e523ee9e"
+os.environ["ErnieAccess"] = ""
 
 agent = Agent()
 
