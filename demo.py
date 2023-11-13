@@ -10,7 +10,8 @@ from dotenv import load_dotenv
 
 from tools.QThreads import chat
 from tools.new_widget import Set_question
-from ui.untitled3 import Ui_MainWindow
+# from ui.untitled3 import Ui_MainWindow
+from ui.fluent_ui import Ui_MainWindow
 import os
 
 from tools.task import Tack_Managet
