@@ -8,7 +8,7 @@ backoff==2.2.1
 bcrypt==4.0.1
 certifi==2023.7.22
 charset-normalizer==3.3.0
-chatharuhi==1.0.4
+chatharuhi~=1.0.8
 chroma-hnswlib==0.7.3
 chromadb==0.4.14
 click==8.1.7
@@ -53,7 +53,7 @@ pydantic==2.4.2
 pydantic_core==2.10.1
 PyPika==0.48.9
 pyreadline3==3.4.1
-PySide6==6.6.0
+PySide6~=6.4.2
 PySide6-Addons==6.6.0
 PySide6-Essentials==6.6.0
 python-dateutil==2.8.2
@@ -83,3 +83,5 @@ watchfiles==0.21.0
 websockets==11.0.3
 yarl==1.9.2
 zipp==3.17.0
+
+matplotlib~=3.8.0
