@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>364</width>
-    <height>678</height>
+    <width>430</width>
+    <height>714</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -98,8 +98,8 @@ background-color: rgb(238, 152, 238);
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>360</width>
-            <height>499</height>
+            <width>426</width>
+            <height>535</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -121,6 +121,12 @@ background-color: rgb(238, 152, 238);
     </item>
     <item>
      <widget class="QWidget" name="mywidget" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>16777213</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
@@ -164,7 +170,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../file/images.qrc">:/files/emoji/idc.png</pixmap>
+            <pixmap>:/files/emoji/idc.png</pixmap>
            </property>
           </widget>
          </item>
@@ -174,7 +180,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../file/images.qrc">:/files/emoji/ok.png</pixmap>
+            <pixmap>:/files/emoji/ok.png</pixmap>
            </property>
           </widget>
          </item>
@@ -187,7 +193,7 @@ background-color: rgb(238, 152, 238);
             <enum>Qt::AutoText</enum>
            </property>
            <property name="pixmap">
-            <pixmap resource="../file/images.qrc">:/files/emoji/die.png</pixmap>
+            <pixmap>:/files/emoji/die.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>false</bool>
@@ -214,7 +220,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../file/images.qrc">:/files/emoji/sorry.png</pixmap>
+            <pixmap>:/files/emoji/sorry.png</pixmap>
            </property>
           </widget>
          </item>
@@ -224,7 +230,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../file/images.qrc">:/files/emoji/cry.png</pixmap>
+            <pixmap>:/files/emoji/cry.png</pixmap>
            </property>
           </widget>
          </item>
@@ -234,7 +240,7 @@ background-color: rgb(238, 152, 238);
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../file/images.qrc">:/files/emoji/this.png</pixmap>
+            <pixmap>:/files/emoji/this.png</pixmap>
            </property>
           </widget>
          </item>
@@ -288,7 +294,6 @@ background-color: rgb(238, 152, 238);
            <property name="styleSheet">
             <string notr="true">QPlainTextEdit{
 	border-radius:15px;
-
 	background-color: #edceeb;
 	font: 12pt &quot;Zpix&quot;;
 }</string>

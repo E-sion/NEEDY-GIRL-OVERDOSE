@@ -57,7 +57,6 @@ class Ui_MainWindow(object):
 
         self.listWidget.setCurrentRow(-1)
 
-
         QMetaObject.connectSlotsByName(MainWindow)
 
     # setupUi

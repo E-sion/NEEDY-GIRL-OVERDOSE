@@ -143,7 +143,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(6)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 6)
+
         self.plainTextEdit = MyPlainTextEdit(self.mywidget)
+
         self.plainTextEdit.setObjectName(u"plainTextEdit")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
