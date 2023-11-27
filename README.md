@@ -1,6 +1,9 @@
 # NEEDY-GIRL-OVERDOSE-CHAT
  NEEDY GIRL OVERDOSE 主播女孩重度依赖 聊天软件 chatgpt AI ame
 
+## 此项目已陷入搁置，目前正在把时间尽力放在此项目上：
+https://github.com/E-sion/NEEDY-SLACK-Haruhi2
+
 
 
 ### 运行
