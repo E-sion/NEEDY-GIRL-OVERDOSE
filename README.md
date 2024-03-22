@@ -1,6 +1,5 @@
 # NEEDY-GIRL-OVERDOSE-CHAT
- NEEDY GIRL OVERDOSE 主播女孩重度依赖 聊天软件 chatgpt AI ame
-
+时间和精力都放在另外的一个软件上 ，[Flutter 版本的“主播女孩重度依赖”APP](https://www.bilibili.com/video/BV1YD421E71f/)，暂不开源。
 
 ## 分支注意事项：
 
